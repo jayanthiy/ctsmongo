@@ -1,13 +1,13 @@
 # Mongo Coverage
 
     Installation and Setup
-        -- 1. MongoDB - https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
-        -- 2. Clients - GUI client
+        1. MongoDB - https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+        2. Clients - GUI client
             a. Robo Mongo: https://robomongo.org/
             b. Mongo Booster: https://mongobooster.com/
-        -- 3. VisualCode - https://code.visualstudio.com/
-        -- 4. NodeJS - https://nodejs.org/en/
-        -- 5. Postman(REST API testing) - https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
+        3. VisualCode - https://code.visualstudio.com/
+        4. NodeJS - https://nodejs.org/en/
+        5. Postman(REST API testing) - https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
 
 
 Differences with Relational DB's
