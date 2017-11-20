@@ -1,0 +1,14 @@
+{
+    "name": "Ravi's",
+    "age": 34,
+    "active": true,
+    "department" :{"name":"HR"},
+    "address": [
+        {
+            "city": "Delhi"
+        },
+        {
+            "city": "Mumbai"
+        }
+    ]
+}
