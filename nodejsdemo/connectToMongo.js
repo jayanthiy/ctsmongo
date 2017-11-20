@@ -10,24 +10,30 @@ MongoClient.connect(url, function(err, db) {
     console.log(db.databaseName);
     // Insert some values into DB
     var collection = db.collection('person');
-    var obj = {
-        "name": 'Priya',
-        "age": 34,
-        "active": true,
-        "department" :{"name":"HR"},
-        "address": [
-            {
-                "city": "Delhi"
-            },
-            {
-                "city": "Mumbai"
-            }
-        ]
-    }
-    collection.insertOne(obj, function(err, docs){
-        if(err) throw err;
-        console.log('Inserted to DB!!');
-    })
+    // var obj = {
+    //     "name": 'Priya',
+    //     "age": 34,
+    //     "active": true,
+    //     "department" :{"name":"HR"},
+    //     "address": [
+    //         {
+    //             "city": "Delhi"
+    //         },
+    //         {
+    //             "city": "Mumbai"
+    //         }
+    //     ]
+    // }
+    // collection.insertOne(obj, function(err, docs){
+    //     if(err) throw err;
+    //     console.log('Inserted to DB!!');
+    // })
+
+    //Read from DB
+     collection.find({}).toArray(function(err, docs){
+         if(err) throw err;
+         console.log(docs);
+     })   
 })
 
 

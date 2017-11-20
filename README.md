@@ -24,9 +24,9 @@ NodeJS to connect to Mongo DB, basic crud.
     Expose a REST API for our data
 
 MEAN/MERN stack
-
-Mongodb - Persistence
-Node and Express - Server Side programs
-Angular/React - UI
+    MEN - Mongo Express Node
+    Mongodb - Persistence
+    Node and Express - Server Side programs
+    Angular/React - UI
 
 
