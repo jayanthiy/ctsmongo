@@ -9,13 +9,12 @@
         3. VisualCode - https://code.visualstudio.com/
         4. NodeJS - https://nodejs.org/en/
         5. Postman(REST API testing) - https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
+        6. MongoDB command line: mongo
 
 
     Differences with Relational DB's
-    Tables - Collections
-
-    Mongo Client - mongo command line
-    GUI Client - Robomongo
+        https://docs.mongodb.com/manual/reference/sql-comparison/
+        Tables - Collections
 
     Javascript Primier:
         Not strongly typed.
@@ -64,8 +63,11 @@
     • Write documents in MongoDB
     • Read and aggregate data
     • Update and delete queries
+
+    
     • Indexes – Single and Compound 
     • Understand Query Optimization 
     • Replication 
+    • MEAN stack app 
 
 
