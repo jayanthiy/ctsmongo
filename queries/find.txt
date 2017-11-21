@@ -1,0 +1,22 @@
+FIND QUERIES
+
+collection.find({QUERY}, {FILEDS_TO_SELECT})
+db.regions.find({})
+db.regions.find({RegionID:1}, {_id:0, RegionDescription:1})
+
+Utility functions - Count, Limit, Skip, Sort
+db.regions.find({}).count()
+db.regions.find({}).limit(2)
+db.regions.find({}).skip(1)
+db.regions.find({}).sort({RegionDescription:1})
+
+Comparison operators
+db.products.find({FIELD: {$operator: VALUE}})
+db.products.find({UnitPrice: {$gt: 100}})
+db.products.find({UnitPrice: {$eq: 123.79}})
+db.products.find({UnitPrice: {$gt: 100, $lt:130}})
+
+Logical operators
+db.products.find({$and: [{condition1}, {condition2}]})
+db.products.find({$and: [{UnitPrice: {$gt: 100}}, {Discontinued: {$eq: 1}}]})
+db.products.find({$or: [{UnitsInStock: {$eq: 0}}, {Discontinued: {$eq: 1}}]})
