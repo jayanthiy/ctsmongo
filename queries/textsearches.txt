@@ -1,0 +1,17 @@
+db.getCollection("primer-dataset").find({})
+
+//Only primary key as index
+db.getCollection("primer-dataset").getIndexes()
+
+//Create an Index
+db.getCollection("primer-dataset").createIndex({name: "text"})
+
+
+//Text-Based Search
+
+db.getCollection("primer-dataset").find({$text: {$search: "cream important"}})
+db.getCollection("primer-dataset").find({$text: {$search: "cream important", $caseSensitive: true}})
+// Query -- Queries
+
+
+

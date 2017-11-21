@@ -16,8 +16,6 @@ db.students.update({}, {$pop: {scores:-1}}, {multi:true})
 db.students.find({scores: {$elemMatch: {$gt:40, $lt:50} }},{scores:true, _id:0} )
 
 
-
-
 db.students.insertMany([
   {"first_name": "Constantia",
   "last_name": "Trimming",
