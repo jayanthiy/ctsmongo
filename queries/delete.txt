@@ -1,0 +1,6 @@
+DELETE QUERIES
+
+db.customers_copy.find({Country:"Mexico"})
+db.customers_copy.distinct("Country")
+db.customers_copy.deleteMany({Country:"Canada"})
+db.customers_copy.remove({Country:"Mexico"})

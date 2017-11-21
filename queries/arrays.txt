@@ -1,0 +1,66 @@
+ARRAY QUERIES
+
+db.students.find({})
+db.students.find({}, {scores:true, _id:0})
+db.students.find({scores: {$lt:98, $gt:50}}, {scores:true, _id:0})
+
+//Adding up unique values
+db.students.update({}, {$addToSet: {scores:34}}, {multi:true})
+//Add up any value
+db.students.update({}, {$push: {scores:34}}, {multi:true})
+//Adding multiple values
+db.students.update({}, { $push: {scores:{$each:[17,18], $position: 2}} }, {multi:true})
+//Pulling values
+db.students.update({}, {$pop: {scores:-1}}, {multi:true})
+//Element match
+db.students.find({scores: {$elemMatch: {$gt:40, $lt:50} }},{scores:true, _id:0} )
+
+
+
+
+db.students.insertMany([
+  {"first_name": "Constantia",
+  "last_name": "Trimming",
+  "gender": "Female",
+  "scores": [
+    33,45
+  ]
+}, {
+  "first_name": "Patrizio",
+  "last_name": "Bedboro",
+  "gender": "Male",
+  "scores": [
+   45,56
+  ]
+}, {
+  "first_name": "Lee",
+  "last_name": "Cottle",
+  "gender": "Male",
+  "scores": [
+    66, 98
+  ]
+}])
+
+
+
+
+db.students.insertMany([
+  {"first_name": "Constantia",
+  "last_name": "Trimming",
+  "gender": "Female",
+  "scores": [
+      {max: 99, min: 34},
+      {max: 70, min: 12}
+  ]
+}, {
+  "first_name": "Patrizio",
+  "last_name": "Bedboro",
+  "gender": "Male",
+  "scores": [
+    {max: 76, min: 44},
+      {max: 13, min: 12}
+  ]
+}])
+
+//Complex Array Find
+db.students.find({"scores.max": {$gt:90}}, {scores:true, _id:0})
