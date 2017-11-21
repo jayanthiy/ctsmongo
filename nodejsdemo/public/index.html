@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Customers Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css">
+</head>
+<body ng-app="customerApp">
+    <div ng-controller="AppCtrl">
+        <h2>ANgular/Client Page</h2>
+        <input type="text" ng-model="search.CompanyName" placeholder="Search by Company Name"/>
+        <input type="text" ng-model="search.ContactName" placeholder="Search by Contact Name"/>
+        <table>
+            <tr ng-repeat="customer in customers | filter:search">
+                <td>{{customer.CompanyName}}</td>
+                <td>{{customer.ContactName}}</td>
+                <td>{{customer.ContactTitle}}</td>
+                <td>{{customer.Address}}</td>
+                <td>{{customer.City}}</td>
+                <td>{{customer.Region}}</td>
+                <td>{{customer.PostalCode}}</td>
+                <td>{{customer.Country}}</td>
+                <td>{{customer.Phone}}</td>
+                <td>{{customer.Fax}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script>
+        var app = angular.module('customerApp', [])
+
+        app.controller('AppCtrl', function($scope, $http){
+            $http({
+                url: 'http://localhost:3000/customers',
+                method: 'GET'
+            }).then((res)=>{
+                console.log(res.data);
+                $scope.customers = res.data;
+            })
+        })
+    </script>
+
+</body>
+</html>
