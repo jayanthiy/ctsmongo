@@ -1,0 +1,13 @@
+UPDATE QUERIES
+
+db.collection.update(query, update object, options)
+
+db.shippers_copy.find({})
+
+db.shippers_copy.update({},{Phone: '123456'})
+
+db.shippers_copy.update({CompanyName:'Speedy Express'},{$set:{Phone: '123456789'}})
+db.shippers_copy.update({},{$set:{Phone: 'abc-123456'}}, {multi:true})
+db.shippers_copy.updateMany({},{$set:{Phone: 'efg-123456'}})
+db.shippers_copy.updateOne({},{$set:{Phone: 'pqr-123456'}})
+db.shippers_copy.updateOne({CompanyName: "Florence Fennel"},{$set:{Phone: 'xyz-123456'}},{upsert:true})
