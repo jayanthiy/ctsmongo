@@ -1,0 +1,40 @@
+db.webrank.find({})
+
+db.webrank.aggregate()
+      //.match(qb.where("status").eq("A"))
+      //.project("gender _id")
+      //.unwind("$arrayField")
+      //.group({ _id: "$gender", count: { $sum: 1 } })
+      //.sort("-count")
+      //.limit(5)
+ 
+// Sum up the rows for category      
+db.webrank.aggregate({
+    $group: {_id: "$category", totalnumber: {$sum:1}}
+},
+ {$sort:{totalnumber:-1}}
+)
+// Find average visits per category and get top 2
+db.webrank.aggregate({
+    $group: {_id: "$category", avgvisits: {$avg:"$visits"}}
+},
+ {$sort:{avgvisits:-1}},
+ {$limit:2}
+)
+//Match only blog and find most visited blogging sites
+db.webrank.aggregate({
+    $match : {category: "blog"}
+}, 
+{$sort:{visits:-1}}, 
+{$limit:2}
+)
+
+//Find category visits more than 1 million
+db.webrank.aggregate({
+   $group: {_id: "$category", totalvisits: {$sum:"$visits"}}
+}, 
+{$match: {totalvisits: {$gte:100000*1000}}}
+)
+
+db.webrank.aggregate([{ $project: {_id:0, site:{$substr: ["$site", 0,4 ]}, visits:1}}])
+     

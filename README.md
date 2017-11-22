@@ -50,24 +50,50 @@
         Find Queries
         db.collection.find({QUERY}, {FIELDS TO SELECT})
 
+    JS capabilities
+        Run scripts
+        Mongodb Commands db.createCollection()
+        https://docs.mongodb.com/manual/reference/method/
+        Cursors
+        javascript eval()
+        https://docs.mongodb.com/manual/reference/method/db.eval/
+        Store functions on mongodb server
+        https://docs.mongodb.com/manual/tutorial/store-javascript-function-on-server/
+
+    GridFS for Binary data
+        MongoExpress IDE 
+        Command line
+        NodeJS library
+
+    Aggregate functionality working with Aggregate pipeline
+
+    Replication: backup server
+    Steps for simple replication:
+        1. Start up few instance of mongodb
+            mongod --dbpath "repl_one" --port 27017 --replSet "REPLICA_ONE"
+            mongod --dbpath "repl_two" --port 27020 --replSet "REPLICA_ONE"
+        2. Add the instance as host
+            rs.add(HOST:PORT)
+
+    Mongoose ODM - Object to Document Mapping
+        http://mongoosejs.com/index.html
 
     • Install and run MongoDB on Linux \ Windows
     • Connect to MongoDB database 
     • Use the Mongo shell
     • NodeJS with MongoDB
     • Describe CRUD
-
     • Describe MongoDB  
     • Key features of MongoDB
-    • Data Model Design 
-    • Write documents in MongoDB
     • Read and aggregate data
     • Update and delete queries
+    • Write documents in MongoDB
+    • MEAN stack app
 
-    
+    • Data Model Design 
+
     • Indexes – Single and Compound 
     • Understand Query Optimization 
     • Replication 
-    • MEAN stack app 
-
-
+    • MEAN stack app - ODM(Object to Document Mapping), Server Side Validations
+ 
